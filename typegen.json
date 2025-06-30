@@ -1,0 +1,9 @@
+{
+  "abis": [
+    {
+      "name": "erc20",
+      "path": "assets/ERC20.json",
+      "output": "src/abi/erc20.ts"
+    }
+  ]
+}
