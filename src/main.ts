@@ -17,11 +17,11 @@ processor.run(new TypeormDatabase(), async (ctx) => {
         const { src, dst, wad } = erc20.events.Transfer.decode(log);
         transfers.push(
           new Transfer({
-            id: `${log.transaction?.hash}-${log.logIndex}`,
+            id: `${log.transactionHash}-${log.logIndex}`,
             from: src,
             to: dst,
             amount: wad, // Convert BigNumber to string for TypeORM
-            transactionHash: log.transaction?.hash,
+            transactionHash: log.transactionHash,
             blockNumber: block.header.height,
             timestamp: new Date(block.header.timestamp),
           })
